@@ -1,25 +1,8 @@
 import {bootstrap} from 'angular2/platform/browser';
 import {Component} from 'angular2/core';
 
-@Component({
-  selector: 'my-header',
-  template: `
-  Header from component
-  `
-})
-class MyHeader {
-
-}
-
-@Component({
-  selector: 'my-footer',
-  template: `
-  Footer from component
-  `
-})
-class MyFooter {
-
-}
+import {MyHeader} from './header/header';
+import {MyFooter} from './footer/footer';
 
 @Component({
   selector: 'seed-app',
