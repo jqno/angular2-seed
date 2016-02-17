@@ -20,7 +20,7 @@ class Service {
   template: `
     {{ service.getAvatar() }}
 
-    <button on-click="onClick()">Click me</button>
+    <button (click)="onClick()">Click me</button>
   `
 })
 export class MyAvatar {
