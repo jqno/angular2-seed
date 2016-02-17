@@ -9,4 +9,7 @@ Best practices:
 
 * ...HTTP_PROVIDERS 'flattens' the collection of services that HTTP_PROVIDERS really is.
 
-* The asterisk in front of ngFor converts the thing into a template and adds some behavior and does it more efficiently than if you type it out. So for performance, use *.
+* The asterisk in front of ngFor converts the thing into a template and adds some behavior and does it more efficiently than if you type it out. So for performance, use the asterisk.
+
+* It's [(...)], not ([...]). If you forget, think about: banana in the box!
+
