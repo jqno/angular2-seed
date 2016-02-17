@@ -17,3 +17,7 @@ Best practices:
 
 * The teacher had FORM_PROVIDERS in his code in several places. Mine still works fine without them. I don't quite understand why.
 
+* If you want to refer to styles and templates using URLs, you can use require('./styles.css') to get relative paths instead of absolute.
+
+* Je kunt pipes gebruiken om te pretty-printen: {{ data | json }} rendert `data` als json.
+
