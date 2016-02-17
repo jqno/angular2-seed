@@ -12,15 +12,26 @@ class Header {
 }
 
 @Component({
+  selector: 'my-footer',
+  template: `
+  Footer from component
+  `
+})
+class Footer {
+
+}
+
+@Component({
   selector: 'seed-app',
   directives: [
-    Header
+    Header,
+    Footer
   ],
   template: `
   <div>
     <my-header>header</my-header>
     <main>content</main>
-    <footer>footer</footer>
+    <my-footer>footer</my-footer>
   </div>
   `
 })
