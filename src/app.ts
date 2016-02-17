@@ -19,7 +19,7 @@ class TodoService {
   <div>
     <input type="text"
       [value]="defaultTodo"
-      (input)="onInput($event)"/>
+      (input)="onInput($event.target.value)"/>
     <pre>this.defaultTodo = {{ defaultTodo }}</pre>
   </div>
   `
@@ -30,8 +30,8 @@ class Todo {
   constructor(private todoService: TodoService) {
   }
 
-  onInput(event) {
-    this.defaultTodo = event.target.value;
+  onInput(value) {
+    this.defaultTodo = value;
   }
 }
 
