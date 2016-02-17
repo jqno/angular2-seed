@@ -17,7 +17,7 @@ class Service {
     Service
   ],
   template: `
-    {{ value }}
+    {{ service.getAvatar() }}
   `
 })
 export class MyAvatar {
