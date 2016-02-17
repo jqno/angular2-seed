@@ -6,15 +6,16 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES} from 'angular2/common';
 import {MyHeader} from './header/header';
 import {MyFooter} from './footer/footer';
 import {TodoList} from './todo/todo';
+
 import {TodoService} from './todo/todo-service';
 
 @Component({
   selector: 'seed-app',
   directives: [
+    FORM_DIRECTIVES,
     MyHeader,
     MyFooter,
     TodoList,
-    FORM_DIRECTIVES
   ],
   template: `
   <div>
