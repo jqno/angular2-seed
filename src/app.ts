@@ -2,7 +2,7 @@ import {bootstrap} from 'angular2/platform/browser';
 import {Component} from 'angular2/core';
 
 @Component({
-  selector: 'header',
+  selector: 'my-header',
   template: `
   Header from component
   `
@@ -18,7 +18,7 @@ class Header {
   ],
   template: `
   <div>
-    <header>header</header>
+    <my-header>header</my-header>
     <main>content</main>
     <footer>footer</footer>
   </div>
