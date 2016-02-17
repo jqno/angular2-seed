@@ -1,5 +1,5 @@
 import {Component, Injectable} from 'angular2/core';
-import {Http} from 'angular2/http';
+import {Http, Response} from 'angular2/http';
 
 @Injectable()
 class Service {
@@ -31,7 +31,7 @@ export class MyAvatar {
 
   onClick() {
     var url = '/data.json';
-    this.http.get(url).subscribe(res => {
+    this.http.get(url).subscribe((res: Response) => {
       var json = res.json();
       console.log('json ', json);
     });
