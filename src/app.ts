@@ -18,22 +18,29 @@ class TodoService {
   template: `
   <div>
     <input type="text"
-      [value]="value"
-      (input)="onInput($event.target.value)"/>
-    <pre>this.defaultTodo = {{ defaultTodo }}</pre>
-    <pre>this.value = {{ value }}</pre>
+      (keyup.enter)="onInput($event.target.value)"/>
+    <ul>
+      <li *ngFor="var todo of todos">
+        {{ todo }}
+      </li>
+    </ul>
   </div>
   `
 })
 class Todo {
-  defaultTodo = 'Default todo';
-  value = this.defaultTodo;
+  todos = [
+    'first value'
+  ];
 
   constructor(private todoService: TodoService) {
   }
 
   onInput(value) {
-    this.value = value;
+    var newTodos = [
+      ...this.todos,
+      value
+    ];
+    this.todos = newTodos
   }
 }
 
