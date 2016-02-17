@@ -19,12 +19,18 @@ class Service {
   ],
   template: `
     {{ service.getAvatar() }}
+
+    <button on-click="onClick()">Click me</button>
   `
 })
 export class MyAvatar {
   constructor(
     private service: Service,
     private http: Http) {
+  }
+
+  onClick() {
+    console.log('I have been clicked');
   }
 }
 
