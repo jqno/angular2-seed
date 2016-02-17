@@ -29,9 +29,9 @@ class MyFooter {
   ],
   template: `
   <div>
-    <my-header>header</my-header>
+    <my-header></my-header>
     <main>content</main>
-    <my-footer>footer</my-footer>
+    <my-footer></my-footer>
   </div>
   `
 })
