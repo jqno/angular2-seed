@@ -17,9 +17,11 @@ class Service {
     Service
   ],
   template: `
+    {{ value }}
   `
 })
 export class MyAvatar {
+  value = 'my value'
   constructor(public service: Service) {
   }
 }
