@@ -1,5 +1,6 @@
 import {Component, Injectable} from 'angular2/core';
 import {Http, Response} from 'angular2/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 class Service {
@@ -8,7 +9,10 @@ class Service {
   }
   
   getAvatar() {
-    return this.http.get('/data.json');
+    return this.http
+        .get('/data.json')
+        .map((res: Response) => res.json())
+        .map((json: any) => json.data);
   }
 }
 
@@ -30,10 +34,8 @@ export class MyAvatar {
   }
 
   onClick() {
-    var url = '/data.json';
-    this.service.getAvatar().subscribe((res: Response) => {
-      var json = res.json();
-      this.avatar = json.data;
+    this.service.getAvatar().subscribe((avatar: any) => {
+      this.avatar = avatar;
     });
   }
 }
