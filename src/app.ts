@@ -7,7 +7,9 @@ import {MyFooter} from './footer/footer';
 
 @Injectable()
 class TodoService {
-
+  todos = [
+    'first value'
+  ];
 }
 
 @Component({
@@ -21,7 +23,7 @@ class TodoService {
       [(ngModel)]="current"
       (keyup.enter)="onEnter($event.target.value)"/>
     <ul>
-      <li *ngFor="#todo of todos">
+      <li *ngFor="#todo of todoService.todos">
         {{ todo }}
       </li>
     </ul>
@@ -30,15 +32,11 @@ class TodoService {
 })
 class Todo {
   current = '';
-  todos = [
-    'first value'
-  ];
-
   constructor(private todoService: TodoService) {
   }
 
   onEnter(value) {
-    this.todos.push(value);
+    this.todoService.todos.push(value);
     this.current = '';
   }
 }
