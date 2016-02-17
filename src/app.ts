@@ -36,11 +36,7 @@ class Todo {
   }
 
   onInput(value) {
-    var newTodos = [
-      ...this.todos,
-      value
-    ];
-    this.todos = newTodos
+    this.todos.push(value);
   }
 }
 
