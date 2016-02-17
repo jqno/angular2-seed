@@ -7,7 +7,7 @@ import {Component} from 'angular2/core';
   Header from component
   `
 })
-class Header {
+class MyHeader {
 
 }
 
@@ -17,15 +17,15 @@ class Header {
   Footer from component
   `
 })
-class Footer {
+class MyFooter {
 
 }
 
 @Component({
   selector: 'seed-app',
   directives: [
-    Header,
-    Footer
+    MyHeader,
+    MyFooter
   ],
   template: `
   <div>
