@@ -18,7 +18,9 @@ class TodoService {
   template: `
   <div>
     <input type="text"
-      (keyup.enter)="onInput($event.target.value)"/>
+      [value]=current
+      (input)="onInput($event.target.value)"
+      (keyup.enter)="onEnter($event.target.value)"/>
     <ul>
       <li *ngFor="var todo of todos">
         {{ todo }}
@@ -28,6 +30,7 @@ class TodoService {
   `
 })
 class Todo {
+  current = '';
   todos = [
     'first value'
   ];
@@ -35,8 +38,13 @@ class Todo {
   constructor(private todoService: TodoService) {
   }
 
-  onInput(value) {
+  onEnter(value) {
     this.todos.push(value);
+    this.current = '';
+  }
+
+  onInput(value) {
+    this.current = value;
   }
 }
 
