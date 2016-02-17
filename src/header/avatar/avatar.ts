@@ -18,12 +18,14 @@ class Service {
     Service
   ],
   template: `
-    {{ service.getAvatar() }}
+    {{ avatar }}
 
     <button (click)="onClick()">Click me</button>
   `
 })
 export class MyAvatar {
+  avatar = '';
+
   constructor(
     private service: Service,
     private http: Http) {
@@ -33,7 +35,7 @@ export class MyAvatar {
     var url = '/data.json';
     this.http.get(url).subscribe((res: Response) => {
       var json = res.json();
-      console.log(json.data);
+      this.avatar = json.data;
     });
   }
 }
