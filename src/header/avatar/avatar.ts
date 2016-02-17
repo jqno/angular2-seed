@@ -1,4 +1,5 @@
 import {Component, Injectable} from 'angular2/core';
+import {Http} from 'angular2/http';
 
 @Injectable()
 class Service {
@@ -21,8 +22,9 @@ class Service {
   `
 })
 export class MyAvatar {
-  value = 'my value'
-  constructor(private service: Service) {
+  constructor(
+    private service: Service,
+    private http: Http) {
   }
 }
 
