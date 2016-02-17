@@ -19,7 +19,7 @@ import {TodoService} from './todo/todo-service';
   ],
   template: `
   <div>
-    <my-header></my-header>
+    <my-header (newTodo)="onNewTodo($event)"></my-header>
     <main>
       <todo-list [todos]="todoService.todos"></todo-list>
     </main>
@@ -29,6 +29,10 @@ import {TodoService} from './todo/todo-service';
 })
 class SeedApp {
   constructor(private todoService: TodoService) {
+  }
+
+  onNewTodo(value) {
+    this.todoService.todos.push(value);
   }
 }
 

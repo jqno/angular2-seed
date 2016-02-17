@@ -1,6 +1,5 @@
-import {Component} from 'angular2/core';
+import {Component, EventEmitter, Output} from 'angular2/core';
 import {MyAvatar} from './avatar/avatar';
-import {TodoService} from '../todo/todo-service';
 
 @Component({
   selector: 'my-header',
@@ -12,18 +11,18 @@ import {TodoService} from '../todo/todo-service';
   <my-avatar></my-avatar>
   <input type="text"
     [(ngModel)]="current"
-    (keyup.enter)="onEnter($event.target.value)"/>
+    (keyup.enter)="onEnter()"/>
   `
 })
 export class MyHeader {
+  @Output() newTodo = new EventEmitter();
+
   current = '';
 
-  constructor(private todoService: TodoService) {
-  }
-
-  onEnter(value) {
-    this.todoService.todos.push(value);
+  onEnter() {
+    var value = this.current;
     this.current = '';
+    this.newTodo.emit(value);
   }
 }
 
