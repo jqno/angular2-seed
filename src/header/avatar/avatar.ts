@@ -30,7 +30,11 @@ export class MyAvatar {
   }
 
   onClick() {
-    console.log('I have been clicked');
+    var url = '/data.json';
+    this.http.get(url).subscribe(res => {
+      var json = res.json();
+      console.log('json ', json);
+    });
   }
 }
 
