@@ -3,7 +3,13 @@ import {Component} from 'angular2/core';
 
 @Component({
   selector: 'seed-app',
-  template: 'hello'
+  template: `
+  <div>
+    <header>header</header>
+    <main>content</main>
+    <footer>footer</footer>
+  </div>
+  `
 })
 class SeedApp {
 
