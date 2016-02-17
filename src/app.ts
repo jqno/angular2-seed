@@ -1,7 +1,6 @@
 import {bootstrap} from 'angular2/platform/browser';
 import {Component, Injectable} from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
-import {FORM_PROVIDERS, FORM_DIRECTIVES} from 'angular2/common';
 
 import {MyHeader} from './header/header';
 import {MyFooter} from './footer/footer';
@@ -12,7 +11,6 @@ import {TodoService} from './todo/todo-service';
 @Component({
   selector: 'seed-app',
   directives: [
-    FORM_DIRECTIVES,
     MyHeader,
     MyFooter,
     TodoList,
@@ -38,6 +36,5 @@ class SeedApp {
 
 bootstrap(SeedApp, [
   TodoService,
-  FORM_PROVIDERS,
   HTTP_PROVIDERS
 ]);
