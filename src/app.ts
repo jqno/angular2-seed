@@ -17,15 +17,21 @@ class TodoService {
   ],
   template: `
   <div>
-    <input type="text" [value]="defaultTodo"/>
+    <input type="text"
+      [value]="defaultTodo"
+      (input)="onInput($event)"/>
     <pre>this.defaultTodo = {{ defaultTodo }}</pre>
   </div>
   `
 })
 class Todo {
   defaultTodo = 'Default todo'
+  
   constructor(private todoService: TodoService) {
+  }
 
+  onInput(event) {
+    this.defaultTodo = event.target.value;
   }
 }
 
