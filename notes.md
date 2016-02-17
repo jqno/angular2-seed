@@ -13,3 +13,7 @@ Best practices:
 
 * It's [(...)], not ([...]). If you forget, think about: banana in the box!
 
+* One time, I had a problem where there were no errors (runtime or compile time), but my components weren't updated when I entered data. Turns out, I had to remove a 'providers' somewhere. I don't quite understand why.
+
+* The teacher had FORM_PROVIDERS in his code in several places. Mine still works fine without them. I don't quite understand why.
+
