@@ -33,7 +33,7 @@ export class MyAvatar {
     var url = '/data.json';
     this.http.get(url).subscribe((res: Response) => {
       var json = res.json();
-      console.log('json ', json);
+      console.log(json.data);
     });
   }
 }
