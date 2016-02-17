@@ -15,10 +15,15 @@ import {TodoService} from './todo/todo-service';
     MyFooter,
     TodoList,
   ],
+  styles: [`
+    .bg-red {
+      background-color: red;
+    }
+  `],
   template: `
   <div>
     <my-header (newTodo)="onNewTodo($event)"></my-header>
-    <main>
+    <main class="bg-red">
       <todo-list [todos]="todoService.todos"></todo-list>
     </main>
     <my-footer></my-footer>
