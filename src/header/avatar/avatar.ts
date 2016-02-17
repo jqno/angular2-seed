@@ -22,7 +22,7 @@ class Service {
 })
 export class MyAvatar {
   value = 'my value'
-  constructor(public service: Service) {
+  constructor(private service: Service) {
   }
 }
 
