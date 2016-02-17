@@ -4,20 +4,20 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 
 import {MyHeader} from './header/header';
 import {MyFooter} from './footer/footer';
-import {Todo} from './todo/todo';
+import {TodoList} from './todo/todo';
 
 @Component({
   selector: 'seed-app',
   directives: [
     MyHeader,
     MyFooter,
-    Todo
+    TodoList
   ],
   template: `
   <div>
     <my-header></my-header>
     <main>
-      <todo></todo>
+      <todo-list></todo-list>
     </main>
     <my-footer></my-footer>
   </div>

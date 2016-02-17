@@ -2,7 +2,7 @@ import {Component} from 'angular2/core';
 import {TodoService} from './todo-service';
 
 @Component({
-  selector: 'todo',
+  selector: 'todo-list',
   providers: [
     TodoService
   ],
@@ -19,7 +19,7 @@ import {TodoService} from './todo-service';
   </div>
   `
 })
-export class Todo {
+export class TodoList {
   current = '';
   constructor(private todoService: TodoService) {
   }
