@@ -1,18 +1,16 @@
-import {Component} from 'angular2/core';
+import {Component, Input} from 'angular2/core';
 import {TodoService} from './todo-service';
 
 @Component({
   selector: 'todo-list',
-  providers: [
-    TodoService
-  ],
+  inputs: ['todos'],
   template: `
   <div>
     <input type="text"
       [(ngModel)]="current"
       (keyup.enter)="onEnter($event.target.value)"/>
     <ul>
-      <li *ngFor="#todo of todoService.todos">
+      <li *ngFor="#todo of todos">
         {{ todo }}
       </li>
     </ul>
@@ -20,6 +18,8 @@ import {TodoService} from './todo-service';
   `
 })
 export class TodoList {
+  @Input() todos = [];
+
   current = '';
   constructor(private todoService: TodoService) {
   }
