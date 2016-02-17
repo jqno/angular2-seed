@@ -21,7 +21,7 @@ class TodoService {
       [(ngModel)]="current"
       (keyup.enter)="onEnter($event.target.value)"/>
     <ul>
-      <li *ngFor="var todo of todos">
+      <li *ngFor="#todo of todos">
         {{ todo }}
       </li>
     </ul>
