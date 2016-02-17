@@ -4,42 +4,7 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 
 import {MyHeader} from './header/header';
 import {MyFooter} from './footer/footer';
-
-@Injectable()
-class TodoService {
-  todos = [
-    'first value'
-  ];
-}
-
-@Component({
-  selector: 'todo',
-  providers: [
-    TodoService
-  ],
-  template: `
-  <div>
-    <input type="text"
-      [(ngModel)]="current"
-      (keyup.enter)="onEnter($event.target.value)"/>
-    <ul>
-      <li *ngFor="#todo of todoService.todos">
-        {{ todo }}
-      </li>
-    </ul>
-  </div>
-  `
-})
-class Todo {
-  current = '';
-  constructor(private todoService: TodoService) {
-  }
-
-  onEnter(value) {
-    this.todoService.todos.push(value);
-    this.current = '';
-  }
-}
+import {Todo} from './todo/todo';
 
 @Component({
   selector: 'seed-app',
