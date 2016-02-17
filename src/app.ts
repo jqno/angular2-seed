@@ -18,6 +18,7 @@ class TodoService {
   template: `
   <div>
     <input type="text" [value]="defaultTodo"/>
+    <pre>this.defaultTodo = {{ defaultTodo }}</pre>
   </div>
   `
 })
