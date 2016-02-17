@@ -1,11 +1,5 @@
-import {Component, Injectable} from 'angular2/core';
-
-@Injectable()
-class TodoService {
-  todos = [
-    'first value'
-  ];
-}
+import {Component} from 'angular2/core';
+import {TodoService} from './todo-service';
 
 @Component({
   selector: 'todo',
